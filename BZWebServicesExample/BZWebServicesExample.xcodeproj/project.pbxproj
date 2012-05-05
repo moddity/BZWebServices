@@ -1,0 +1,472 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1F0C718915552EAC00AC46D9 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F0C718815552EAC00AC46D9 /* UIKit.framework */; };
+		1F0C718B15552EAC00AC46D9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F0C718A15552EAC00AC46D9 /* Foundation.framework */; };
+		1F0C718D15552EAC00AC46D9 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F0C718C15552EAC00AC46D9 /* CoreGraphics.framework */; };
+		1F0C719315552EAC00AC46D9 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1F0C719115552EAC00AC46D9 /* InfoPlist.strings */; };
+		1F0C719515552EAC00AC46D9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F0C719415552EAC00AC46D9 /* main.m */; };
+		1F0C719915552EAC00AC46D9 /* BZAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F0C719815552EAC00AC46D9 /* BZAppDelegate.m */; };
+		1F0C719C15552EAC00AC46D9 /* BZViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F0C719B15552EAC00AC46D9 /* BZViewController.m */; };
+		1F0C719F15552EAC00AC46D9 /* BZViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1F0C719D15552EAC00AC46D9 /* BZViewController.xib */; };
+		1F0C71A715552EAC00AC46D9 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F0C71A615552EAC00AC46D9 /* SenTestingKit.framework */; };
+		1F0C71A815552EAD00AC46D9 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F0C718815552EAC00AC46D9 /* UIKit.framework */; };
+		1F0C71A915552EAD00AC46D9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F0C718A15552EAC00AC46D9 /* Foundation.framework */; };
+		1F0C71B115552EAD00AC46D9 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1F0C71AF15552EAD00AC46D9 /* InfoPlist.strings */; };
+		1F0C71B415552EAD00AC46D9 /* BZWebServicesExampleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F0C71B315552EAD00AC46D9 /* BZWebServicesExampleTests.m */; };
+		1F0C71CB155532A100AC46D9 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F0C71CA155532A100AC46D9 /* SystemConfiguration.framework */; };
+		1F0C728C1555341A00AC46D9 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F0C728B1555341A00AC46D9 /* CFNetwork.framework */; };
+		1F0C728E155534FC00AC46D9 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F0C728D155534FC00AC46D9 /* libxml2.dylib */; };
+		1F0C72901555352000AC46D9 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F0C728F1555352000AC46D9 /* libz.dylib */; };
+		1F0C72921555356500AC46D9 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F0C72911555356500AC46D9 /* MobileCoreServices.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		1F0C71AA15552EAD00AC46D9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1F0C717B15552EAC00AC46D9 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1F0C718315552EAC00AC46D9;
+			remoteInfo = BZWebServicesExample;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		1F0C718415552EAC00AC46D9 /* BZWebServicesExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BZWebServicesExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1F0C718815552EAC00AC46D9 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		1F0C718A15552EAC00AC46D9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		1F0C718C15552EAC00AC46D9 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		1F0C719015552EAC00AC46D9 /* BZWebServicesExample-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "BZWebServicesExample-Info.plist"; sourceTree = "<group>"; };
+		1F0C719215552EAC00AC46D9 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		1F0C719415552EAC00AC46D9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		1F0C719615552EAC00AC46D9 /* BZWebServicesExample-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BZWebServicesExample-Prefix.pch"; sourceTree = "<group>"; };
+		1F0C719715552EAC00AC46D9 /* BZAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BZAppDelegate.h; sourceTree = "<group>"; };
+		1F0C719815552EAC00AC46D9 /* BZAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BZAppDelegate.m; sourceTree = "<group>"; };
+		1F0C719A15552EAC00AC46D9 /* BZViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BZViewController.h; sourceTree = "<group>"; };
+		1F0C719B15552EAC00AC46D9 /* BZViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BZViewController.m; sourceTree = "<group>"; };
+		1F0C719E15552EAC00AC46D9 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/BZViewController.xib; sourceTree = "<group>"; };
+		1F0C71A515552EAC00AC46D9 /* BZWebServicesExampleTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BZWebServicesExampleTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		1F0C71A615552EAC00AC46D9 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		1F0C71AE15552EAD00AC46D9 /* BZWebServicesExampleTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "BZWebServicesExampleTests-Info.plist"; sourceTree = "<group>"; };
+		1F0C71B015552EAD00AC46D9 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		1F0C71B215552EAD00AC46D9 /* BZWebServicesExampleTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BZWebServicesExampleTests.h; sourceTree = "<group>"; };
+		1F0C71B315552EAD00AC46D9 /* BZWebServicesExampleTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BZWebServicesExampleTests.m; sourceTree = "<group>"; };
+		1F0C71CA155532A100AC46D9 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		1F0C728B1555341A00AC46D9 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		1F0C728D155534FC00AC46D9 /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
+		1F0C728F1555352000AC46D9 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		1F0C72911555356500AC46D9 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1F0C718115552EAC00AC46D9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1F0C72921555356500AC46D9 /* MobileCoreServices.framework in Frameworks */,
+				1F0C72901555352000AC46D9 /* libz.dylib in Frameworks */,
+				1F0C728E155534FC00AC46D9 /* libxml2.dylib in Frameworks */,
+				1F0C728C1555341A00AC46D9 /* CFNetwork.framework in Frameworks */,
+				1F0C71CB155532A100AC46D9 /* SystemConfiguration.framework in Frameworks */,
+				1F0C718915552EAC00AC46D9 /* UIKit.framework in Frameworks */,
+				1F0C718B15552EAC00AC46D9 /* Foundation.framework in Frameworks */,
+				1F0C718D15552EAC00AC46D9 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1F0C71A115552EAC00AC46D9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1F0C71A715552EAC00AC46D9 /* SenTestingKit.framework in Frameworks */,
+				1F0C71A815552EAD00AC46D9 /* UIKit.framework in Frameworks */,
+				1F0C71A915552EAD00AC46D9 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1F0C717915552EAC00AC46D9 = {
+			isa = PBXGroup;
+			children = (
+				1F0C718E15552EAC00AC46D9 /* BZWebServicesExample */,
+				1F0C71AC15552EAD00AC46D9 /* BZWebServicesExampleTests */,
+				1F0C718715552EAC00AC46D9 /* Frameworks */,
+				1F0C718515552EAC00AC46D9 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		1F0C718515552EAC00AC46D9 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1F0C718415552EAC00AC46D9 /* BZWebServicesExample.app */,
+				1F0C71A515552EAC00AC46D9 /* BZWebServicesExampleTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		1F0C718715552EAC00AC46D9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1F0C72911555356500AC46D9 /* MobileCoreServices.framework */,
+				1F0C728F1555352000AC46D9 /* libz.dylib */,
+				1F0C728D155534FC00AC46D9 /* libxml2.dylib */,
+				1F0C728B1555341A00AC46D9 /* CFNetwork.framework */,
+				1F0C71CA155532A100AC46D9 /* SystemConfiguration.framework */,
+				1F0C718815552EAC00AC46D9 /* UIKit.framework */,
+				1F0C718A15552EAC00AC46D9 /* Foundation.framework */,
+				1F0C718C15552EAC00AC46D9 /* CoreGraphics.framework */,
+				1F0C71A615552EAC00AC46D9 /* SenTestingKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		1F0C718E15552EAC00AC46D9 /* BZWebServicesExample */ = {
+			isa = PBXGroup;
+			children = (
+				1F0C719715552EAC00AC46D9 /* BZAppDelegate.h */,
+				1F0C719815552EAC00AC46D9 /* BZAppDelegate.m */,
+				1F0C719A15552EAC00AC46D9 /* BZViewController.h */,
+				1F0C719B15552EAC00AC46D9 /* BZViewController.m */,
+				1F0C719D15552EAC00AC46D9 /* BZViewController.xib */,
+				1F0C718F15552EAC00AC46D9 /* Supporting Files */,
+			);
+			path = BZWebServicesExample;
+			sourceTree = "<group>";
+		};
+		1F0C718F15552EAC00AC46D9 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				1F0C719015552EAC00AC46D9 /* BZWebServicesExample-Info.plist */,
+				1F0C719115552EAC00AC46D9 /* InfoPlist.strings */,
+				1F0C719415552EAC00AC46D9 /* main.m */,
+				1F0C719615552EAC00AC46D9 /* BZWebServicesExample-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		1F0C71AC15552EAD00AC46D9 /* BZWebServicesExampleTests */ = {
+			isa = PBXGroup;
+			children = (
+				1F0C71B215552EAD00AC46D9 /* BZWebServicesExampleTests.h */,
+				1F0C71B315552EAD00AC46D9 /* BZWebServicesExampleTests.m */,
+				1F0C71AD15552EAD00AC46D9 /* Supporting Files */,
+			);
+			path = BZWebServicesExampleTests;
+			sourceTree = "<group>";
+		};
+		1F0C71AD15552EAD00AC46D9 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				1F0C71AE15552EAD00AC46D9 /* BZWebServicesExampleTests-Info.plist */,
+				1F0C71AF15552EAD00AC46D9 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1F0C718315552EAC00AC46D9 /* BZWebServicesExample */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1F0C71B715552EAD00AC46D9 /* Build configuration list for PBXNativeTarget "BZWebServicesExample" */;
+			buildPhases = (
+				1F0C718015552EAC00AC46D9 /* Sources */,
+				1F0C718115552EAC00AC46D9 /* Frameworks */,
+				1F0C718215552EAC00AC46D9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = BZWebServicesExample;
+			productName = BZWebServicesExample;
+			productReference = 1F0C718415552EAC00AC46D9 /* BZWebServicesExample.app */;
+			productType = "com.apple.product-type.application";
+		};
+		1F0C71A415552EAC00AC46D9 /* BZWebServicesExampleTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1F0C71BA15552EAD00AC46D9 /* Build configuration list for PBXNativeTarget "BZWebServicesExampleTests" */;
+			buildPhases = (
+				1F0C71A015552EAC00AC46D9 /* Sources */,
+				1F0C71A115552EAC00AC46D9 /* Frameworks */,
+				1F0C71A215552EAC00AC46D9 /* Resources */,
+				1F0C71A315552EAC00AC46D9 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1F0C71AB15552EAD00AC46D9 /* PBXTargetDependency */,
+			);
+			name = BZWebServicesExampleTests;
+			productName = BZWebServicesExampleTests;
+			productReference = 1F0C71A515552EAC00AC46D9 /* BZWebServicesExampleTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		1F0C717B15552EAC00AC46D9 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = BZ;
+				LastUpgradeCheck = 0430;
+				ORGANIZATIONNAME = "Bazinga Systems";
+			};
+			buildConfigurationList = 1F0C717E15552EAC00AC46D9 /* Build configuration list for PBXProject "BZWebServicesExample" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 1F0C717915552EAC00AC46D9;
+			productRefGroup = 1F0C718515552EAC00AC46D9 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1F0C718315552EAC00AC46D9 /* BZWebServicesExample */,
+				1F0C71A415552EAC00AC46D9 /* BZWebServicesExampleTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1F0C718215552EAC00AC46D9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1F0C719315552EAC00AC46D9 /* InfoPlist.strings in Resources */,
+				1F0C719F15552EAC00AC46D9 /* BZViewController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1F0C71A215552EAC00AC46D9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1F0C71B115552EAD00AC46D9 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1F0C71A315552EAC00AC46D9 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1F0C718015552EAC00AC46D9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1F0C719515552EAC00AC46D9 /* main.m in Sources */,
+				1F0C719915552EAC00AC46D9 /* BZAppDelegate.m in Sources */,
+				1F0C719C15552EAC00AC46D9 /* BZViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1F0C71A015552EAC00AC46D9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1F0C71B415552EAD00AC46D9 /* BZWebServicesExampleTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		1F0C71AB15552EAD00AC46D9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1F0C718315552EAC00AC46D9 /* BZWebServicesExample */;
+			targetProxy = 1F0C71AA15552EAD00AC46D9 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		1F0C719115552EAC00AC46D9 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1F0C719215552EAC00AC46D9 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		1F0C719D15552EAC00AC46D9 /* BZViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1F0C719E15552EAC00AC46D9 /* en */,
+			);
+			name = BZViewController.xib;
+			sourceTree = "<group>";
+		};
+		1F0C71AF15552EAD00AC46D9 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1F0C71B015552EAD00AC46D9 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		1F0C71B515552EAD00AC46D9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		1F0C71B615552EAD00AC46D9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		1F0C71B815552EAD00AC46D9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "BZWebServicesExample/BZWebServicesExample-Prefix.pch";
+				HEADER_SEARCH_PATHS = "../BZWebServices/**";
+				INFOPLIST_FILE = "BZWebServicesExample/BZWebServicesExample-Info.plist";
+				OTHER_LDFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		1F0C71B915552EAD00AC46D9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "BZWebServicesExample/BZWebServicesExample-Prefix.pch";
+				HEADER_SEARCH_PATHS = "../BZWebServices/**";
+				INFOPLIST_FILE = "BZWebServicesExample/BZWebServicesExample-Info.plist";
+				OTHER_LDFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		1F0C71BB15552EAD00AC46D9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/BZWebServicesExample.app/BZWebServicesExample";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "BZWebServicesExample/BZWebServicesExample-Prefix.pch";
+				INFOPLIST_FILE = "BZWebServicesExampleTests/BZWebServicesExampleTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		1F0C71BC15552EAD00AC46D9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/BZWebServicesExample.app/BZWebServicesExample";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "BZWebServicesExample/BZWebServicesExample-Prefix.pch";
+				INFOPLIST_FILE = "BZWebServicesExampleTests/BZWebServicesExampleTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1F0C717E15552EAC00AC46D9 /* Build configuration list for PBXProject "BZWebServicesExample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1F0C71B515552EAD00AC46D9 /* Debug */,
+				1F0C71B615552EAD00AC46D9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1F0C71B715552EAD00AC46D9 /* Build configuration list for PBXNativeTarget "BZWebServicesExample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1F0C71B815552EAD00AC46D9 /* Debug */,
+				1F0C71B915552EAD00AC46D9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1F0C71BA15552EAD00AC46D9 /* Build configuration list for PBXNativeTarget "BZWebServicesExampleTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1F0C71BB15552EAD00AC46D9 /* Debug */,
+				1F0C71BC15552EAD00AC46D9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 1F0C717B15552EAC00AC46D9 /* Project object */;
+}
