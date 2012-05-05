@@ -1,0 +1,14 @@
+
+Configurar la vista donde se mostrará el progressview
+==========================================
+
+Añadir al appDelegate p. ej:
+
+[[BZWebServices sharedInstance] setProgressView:self.window.rootViewController.view];
+
+
+CHANGELOG
+===========
+17/08/11 - Jaume - Trets els métodes del singleton
+12/08/11 - Jaume - Afegit suport crides GET.
+08/08/11 - Jaume - Afegit suport pel MBProgressHUD. Ara hi ha métodes que ens treuen automáticament el progress.
