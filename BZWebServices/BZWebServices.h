@@ -1,6 +1,6 @@
 //
-//  WebServices.h
-//  AxelPeople
+//  BZWebServices.h
+//  BZWebServices
 //
 //  Created by Oriol Vilaró on 06/07/11.
 //  Copyright 2011 Bazinga Systems. All rights reserved.
@@ -57,7 +57,7 @@ typedef enum { kTypePost, kTypeGet, kTypeDelete, kTypePut } kRequestType;
 /*
  SINGLETON INSTANCE
  */
-//+(BZWebServices*)sharedInstance;
++(BZWebServices*)sharedInstance;
 
 /* Executes the call to the webService */
 

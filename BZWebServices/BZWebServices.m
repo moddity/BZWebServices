@@ -1,6 +1,6 @@
 //
-//  WebServices.m
-//  AxelPeople
+//  BZWebServices.m
+//  BZWebServices
 //
 //  Created by Oriol Vilaró on 06/07/11.
 //  Copyright 2011 Bazinga Systems. All rights reserved.
@@ -19,7 +19,7 @@
 
 ////////// SINGLETON METHODS BEGIN /////////////
 
-/*
+
 
 static BZWebServices* _sharedInstance = nil;
 
@@ -47,8 +47,8 @@ static BZWebServices* _sharedInstance = nil;
     
 	return nil;
 }
- 
- */
+
+
 
 //////////// END SINGLETON METHODS //////////////
 
@@ -83,7 +83,7 @@ static BZWebServices* _sharedInstance = nil;
 -(void) webServiceCall:(NSString*) method 
         withParameters: (NSDictionary*) parameters 
         withParseBlock:(APIParseBlock)parseBlock {
-
+    
     [self webServiceCall:method withParameters:parameters 
             showProgress:self.showProgress 
           withParseBlock:parseBlock];
@@ -96,14 +96,14 @@ static BZWebServices* _sharedInstance = nil;
     [self webServiceCall:method 
           withParameters:parameters 
             showProgress:willShowProgress
-            withProgressText:nil
+        withProgressText:nil
           withParseBlock:parseBlock];
 }
 
 -(void) webServiceCall:(NSString*) method 
         withParameters: (NSDictionary*) parameters 
-        showProgress:(BOOL)willShowProgress
-        withProgressText:(NSString *)progressText
+          showProgress:(BOOL)willShowProgress
+      withProgressText:(NSString *)progressText
         withParseBlock:(APIParseBlock)parseBlock {
     [self webServiceCall:method 
           withParameters: parameters
@@ -128,10 +128,10 @@ static BZWebServices* _sharedInstance = nil;
           withParseBlock:parseBlock
           withErrorTitle:nil
            withErrorText:nil];
-
+    
 }
-    
-    
+
+
 -(void) webServiceCall: (NSString*) method 
         withParameters: (NSDictionary*) parameters
           showProgress: (BOOL) willShowProgress
@@ -150,11 +150,11 @@ static BZWebServices* _sharedInstance = nil;
           withErrorAlert:YES 
           withErrorTitle:errorTitle
            withErrorText:errorText];
-
+    
     
     
 }
-    
+
 -(void) webServiceCall: (NSString*) method 
         withParameters: (NSDictionary*) parameters
           showProgress: (BOOL) willShowProgress
@@ -164,7 +164,7 @@ static BZWebServices* _sharedInstance = nil;
         withErrorAlert: (BOOL)showAlertError
         withErrorTitle: (NSString*)errorTitle
          withErrorText: (NSString*)errorText{
-
+    
     
     NSAssert(APIURL != nil, @"La APIURL es nula");
     
@@ -173,77 +173,61 @@ static BZWebServices* _sharedInstance = nil;
     
     [self displayProgress];
     
-   
+    
     
     NSURL *methodUrl = nil;
     
-
+    
     switch (requestType) {
             
         case kTypeDelete:
         case kTypeGet:
             methodUrl = [NSURL URLWithString:[NSString stringWithFormat:@"%@/%@%@",APIURL, method, [BZWebServices queryString:fixedParameters withParams:parameters]]];
             
-            NSAssert(fileNames == nil, @"No se pueden enviar imagenes via GET");
+            NSAssert(fileNames == nil, @"Can't send files with GET");
             
             break;
+        case kTypePut:
         case kTypePost:
             methodUrl = [NSURL URLWithString:[NSString stringWithFormat:@"%@/%@",APIURL, method]];
             break;
     }
     
-
+    
     ASIFormDataRequest *request = [ASIFormDataRequest requestWithURL:methodUrl];
     
-
-
-    if(requestType == kTypePost) {
-#ifdef DEBUG 
-    NSLog(@"FIXED PARAMS: %@", fixedParameters);
-#endif
     
-    for(NSString *param in fixedParameters) {
+        DLog(@"FIXED PARAMS: %@", fixedParameters);
         
-        if(requestType == kTypePost) {
-            [request setPostValue:[fixedParameters objectForKey:param] forKey:param];
-#ifdef DEBUG
-            NSLog(@"BZWebServices: FIXED POST PARAMETER -> %@ => %@", param, [fixedParameters objectForKey:param]);
-#endif
-        
-        } else if(requestType == kTypeGet) {
-            [request addRequestHeader:param value:[fixedParameters objectForKey:param]];
-#ifdef DEBUG
-            NSLog(@"BZWebServices: FIXED GET PARAMETER -> %@ => %@", param, [fixedParameters objectForKey:param]);
-#endif
-        
+        for(NSString *param in fixedParameters) {
+            
+            if(requestType == kTypePost) {
+                [request setPostValue:[fixedParameters objectForKey:param] forKey:param];
+                DLog(@"BZWebServices: FIXED POST PARAMETER -> %@ => %@", param, [fixedParameters objectForKey:param]);                
+            } else if(requestType == kTypeGet) {
+                [request addRequestHeader:param value:[fixedParameters objectForKey:param]];
+                DLog(@"BZWebServices: FIXED GET PARAMETER -> %@ => %@", param, [fixedParameters objectForKey:param]);
+            }
         }
-    }
-   
-    //afegim els parametres a la request
-    for(NSString *key in parameters) {
         
-        if(requestType == kTypePost) {
-            [request setPostValue:[parameters objectForKey:key] forKey:key];
-#ifdef DEBUG
-            NSLog(@"BZWebServices: POST PARAMETER -> %@ => %@", key, [parameters objectForKey:key]);
-#endif
-        } else if(requestType == kTypeGet) {
-            [request addRequestHeader:key value:[parameters objectForKey:key]];
-#ifdef DEBUG
-            NSLog(@"BZWebServices: GET PARAMETER -> %@ => %@", key, [parameters objectForKey:key]);
-#endif
+        //afegim els parametres a la request
+        for(NSString *key in parameters) {
+            if(requestType == kTypePost) {
+                [request setPostValue:[parameters objectForKey:key] forKey:key];
+                DLog(@"BZWebServices: POST PARAMETER -> %@ => %@", key, [parameters objectForKey:key]);
+            } else if(requestType == kTypeGet) {
+                [request addRequestHeader:key value:[parameters objectForKey:key]];
+                DLog(@"BZWebServices: GET PARAMETER -> %@ => %@", key, [parameters objectForKey:key]);
+            }
         }
-    }
-    }
     
-    //Añadimos ficheros
+    
+    //Add files on post
     if(requestType == kTypePost && fileNames != nil && [[fileNames allKeys] count] > 0) {
         
         [request setPostFormat:ASIMultipartFormDataPostFormat];
         
         [fileNames enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
-            
-            //[request setData:[fileNames objectForKey:key] forKey:key];
             [request setData:[fileNames objectForKey:key] withFileName:@"image.jpg" andContentType:@"image/jpeg" forKey:key];
         }];
         
@@ -251,11 +235,11 @@ static BZWebServices* _sharedInstance = nil;
     
     switch (requestType) {
         case kTypeGet:
-//            request.requestMethod = @"GET";
+            request.requestMethod = @"GET";
             break;
             
         case kTypePost:
-//            request.requestMethod = @"POST";
+            request.requestMethod = @"POST";
             break;
             
         case kTypeDelete:
@@ -265,15 +249,14 @@ static BZWebServices* _sharedInstance = nil;
         case kTypePut:
             request.requestMethod = @"PUT";            
             break;
-
+            
         default:
             break;
     }
     
     
-#ifdef DEBUG
-    NSLog(@"BZWebServices: CALL URL -> %@", [request url]);
-#endif
+
+    DLog(@"BZWebServices: CALL URL -> %@", [request url]);
     
     request.accessibilityLabel = progressText;
     
@@ -283,19 +266,15 @@ static BZWebServices* _sharedInstance = nil;
     
     [request setTimeOutSeconds:kTIMEOUT];
     
-#ifdef DEBUG
-    NSLog(@"BZWebServices: kTIMEOUT = %f",request.timeOutSeconds);
-#endif
-
+    DLog(@"BZWebServices: kTIMEOUT = %f",request.timeOutSeconds);
+    
     __block BZWebServices *blockSelf = self;
-//    __block APIParseBlock parseBlock2 = parseBlock;
+
     __block ASIFormDataRequest *blockRequest = request;
     
     [request setCompletionBlock:^{
         parseBlock([blockRequest responseString]);
     }];
-    
-    
     
     [request setFailedBlock:^{
         
@@ -318,11 +297,9 @@ static BZWebServices* _sharedInstance = nil;
             [alert show];
             [alert release];
         }
-
+        
     }];
-#ifdef DEBUG
-    NSLog(@"BZWebServices: Call Start");
-#endif
+    DLog(@"BZWebServices: Call Start");
     [queue addOperation:request];
     [queue go];
 }
@@ -330,36 +307,29 @@ static BZWebServices* _sharedInstance = nil;
 
 
 -(void) webServiceCall:(NSString *)method withPostBody:(NSMutableData *)postBody contentType: (NSString*) contentType withParseBlock:(APIParseBlock)parseBlock {
-    NSAssert(APIURL != nil, @"La APIURL es nula");
+    NSAssert(APIURL != nil, @"APIURL is null");
     
     //Setup the progress
     self.showProgress = YES;
     
     [self displayProgress];
     NSURL *methodUrl = [NSURL URLWithString:[NSString stringWithFormat:@"%@/%@",APIURL, method]];
-        
+    
     ASIFormDataRequest *request = [ASIFormDataRequest requestWithURL:methodUrl];
-  
+    
     [request addRequestHeader:@"Content-Type" value:contentType];
     
     [request setPostBody:postBody];
     
-    
-    
-#ifdef DEBUG
-    NSLog(@"BZWebServices: CALL URL -> %@", [request url]);
-#endif
-    
+    DLog(@"BZWebServices: CALL URL -> %@", [request url]);
     
     [request setDelegate:self];
     
     [request setDidStartSelector:@selector(requestStarted:)];
     
     [request setTimeOutSeconds:kTIMEOUT];
-    
-#ifdef DEBUG
-    NSLog(@"BZWebServices: kTIMEOUT = %f",request.timeOutSeconds);
-#endif
+
+    DLog(@"BZWebServices: kTIMEOUT = %f",request.timeOutSeconds);
 
     [request setCompletionBlock:^{
         parseBlock([request responseString]);
@@ -380,14 +350,12 @@ static BZWebServices* _sharedInstance = nil;
         [alert release];
         
     }];
-#ifdef DEBUG
-    NSLog(@"BZWebServices: Call Start");
-#endif
+    
+    DLog(@"BZWebServices: Call Start");
+
     [queue addOperation:request];
     
     [queue go];
-
-    
 }
 
 
@@ -415,7 +383,7 @@ static BZWebServices* _sharedInstance = nil;
 
 +(NSString*) queryString: (NSDictionary*) fixedParameters withParams:(NSDictionary*) params {
     NSMutableString *queryString = [[NSMutableString alloc] init];
-            
+    
     if((fixedParameters != nil || params != nil) &&
        ([fixedParameters count] > 0 || [params count] > 0)) {
         
@@ -433,7 +401,7 @@ static BZWebServices* _sharedInstance = nil;
         
         for(NSString *field in params) {
             NSString *fieldValue = [params objectForKey:field];
-            NSLog(@"PARAM: %@", field);
+            DLog(@"PARAM: %@", field);
             [queryString appendFormat:@"%@=%@", field, [BZWebServices quoteString:fieldValue]];
             paramCount++;
             if(paramCount < total_params)
@@ -454,12 +422,12 @@ static BZWebServices* _sharedInstance = nil;
     
     if([originalString isKindOfClass:[NSNumber class]])
     {
-        NSLog(@"Is a nsnumber: %@",originalString);
+        DLog(@"Is a nsnumber: %@",originalString);
         return originalString;   
     }
-
     
-    NSLog(@"ORS: %@", originalString);
+    
+    DLog(@"ORS: %@", originalString);
     NSMutableString *escaped = [[NSMutableString alloc] initWithString:[originalString stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
     [escaped replaceOccurrencesOfString:@"$" withString:@"%24" options:NSCaseInsensitiveSearch range:NSMakeRange(0, [escaped length])];
     [escaped replaceOccurrencesOfString:@"&" withString:@"%26" options:NSCaseInsensitiveSearch range:NSMakeRange(0, [escaped length])];
@@ -491,7 +459,7 @@ static BZWebServices* _sharedInstance = nil;
     [escaped replaceOccurrencesOfString:@"ñ" withString:@"%C3%B1" options:NSCaseInsensitiveSearch range:NSMakeRange(0, [escaped length])];
     [escaped replaceOccurrencesOfString:@"·" withString:@"%C2%B7" options:NSCaseInsensitiveSearch range:NSMakeRange(0, [escaped length])];
     [escaped replaceOccurrencesOfString:@"ç" withString:@"%C3%A7" options:NSCaseInsensitiveSearch range:NSMakeRange(0, [escaped length])];
-
+    
     
     return escaped;
 }
@@ -499,7 +467,7 @@ static BZWebServices* _sharedInstance = nil;
 +(BOOL)isHostReachable:(NSString*)host{
     
     Reachability *netReach = [Reachability reachabilityWithHostName:host];
-
+    
     NetworkStatus netStatus = [netReach currentReachabilityStatus];
     
     if ((netStatus==ReachableViaWiFi) || (netStatus==ReachableViaWWAN)) {
@@ -512,13 +480,13 @@ static BZWebServices* _sharedInstance = nil;
 +(BOOL)isInternetReachable{
     
     Reachability *internetReachable = [Reachability reachabilityForInternetConnection];
-
+    
     NetworkStatus netStatus = [internetReachable currentReachabilityStatus];
     
     if ((netStatus==ReachableViaWiFi) || (netStatus==ReachableViaWWAN)) {
         return YES;
     }
-
+    
     return NO;
 }
 
