@@ -4,6 +4,3 @@
 [submodule "ASIHttpRequest"]
 	path = ASIHttpRequest
 	url = https://github.com/pokeb/asi-http-request.git
-[submodule "BZWebServicesExample"]
-	path = BZWebServicesExample
-	url = ./BZWebServicesExample
