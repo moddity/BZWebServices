@@ -1,0 +1,9 @@
+[submodule "MBProgressHUD"]
+	path = MBProgressHUD
+	url = git://github.com/matej/MBProgressHUD.git
+[submodule "ASIHttpRequest"]
+	path = ASIHttpRequest
+	url = https://github.com/pokeb/asi-http-request.git
+[submodule "BZWebServicesExample"]
+	path = BZWebServicesExample
+	url = ./BZWebServicesExample
