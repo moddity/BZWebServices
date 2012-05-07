@@ -165,6 +165,35 @@ static BZWebServices* _sharedInstance = nil;
         withErrorTitle: (NSString*)errorTitle
          withErrorText: (NSString*)errorText{
     
+    [self webServiceCall:method
+             requestType:self.requestType
+          withParameters:parameters
+            showProgress:willShowProgress 
+        withProgressText:progressText 
+               withFiles:fileNames 
+          withParseBlock:parseBlock
+          withErrorAlert:showAlertError 
+          withErrorTitle:errorTitle 
+           withErrorText:errorText];
+    
+}
+
+
+-(void) webServiceCall: (NSString*) method 
+           requestType: (kRequestType) reqType
+        withParameters: (NSDictionary*) parameters
+          showProgress: (BOOL) willShowProgress
+      withProgressText: (NSString*) progressText
+             withFiles: (NSDictionary*) fileNames
+        withParseBlock: (APIParseBlock) parseBlock
+        withErrorAlert: (BOOL)showAlertError
+        withErrorTitle: (NSString*)errorTitle
+         withErrorText: (NSString*)errorText{
+    
+    if (self.requestType!=reqType) {
+        self.requestType=reqType;
+    }
+    
     
     NSAssert(APIURL != nil, @"La APIURL es nula");
     
@@ -197,29 +226,26 @@ static BZWebServices* _sharedInstance = nil;
     ASIFormDataRequest *request = [ASIFormDataRequest requestWithURL:methodUrl];
     
     
-        DLog(@"FIXED PARAMS: %@", fixedParameters);
+    DLog(@"FIXED PARAMS: %@", fixedParameters);
+    
+    for(NSString *param in fixedParameters) {
         
-        for(NSString *param in fixedParameters) {
-            
-            if(requestType == kTypePost) {
-                [request setPostValue:[fixedParameters objectForKey:param] forKey:param];
-                DLog(@"BZWebServices: FIXED POST PARAMETER -> %@ => %@", param, [fixedParameters objectForKey:param]);                
-            } else if(requestType == kTypeGet) {
-                [request addRequestHeader:param value:[fixedParameters objectForKey:param]];
-                DLog(@"BZWebServices: FIXED GET PARAMETER -> %@ => %@", param, [fixedParameters objectForKey:param]);
-            }
+        if(requestType == kTypePost) {
+            [request setPostValue:[fixedParameters objectForKey:param] forKey:param];
+            DLog(@"BZWebServices: FIXED POST PARAMETER -> %@ => %@", param, [fixedParameters objectForKey:param]);                
+        } else if(requestType == kTypeGet) {
+            DLog(@"BZWebServices: FIXED GET PARAMETER -> %@ => %@", param, [fixedParameters objectForKey:param]);
         }
-        
-        //afegim els parametres a la request
-        for(NSString *key in parameters) {
-            if(requestType == kTypePost) {
-                [request setPostValue:[parameters objectForKey:key] forKey:key];
-                DLog(@"BZWebServices: POST PARAMETER -> %@ => %@", key, [parameters objectForKey:key]);
-            } else if(requestType == kTypeGet) {
-                [request addRequestHeader:key value:[parameters objectForKey:key]];
-                DLog(@"BZWebServices: GET PARAMETER -> %@ => %@", key, [parameters objectForKey:key]);
-            }
+    }
+    
+    for(NSString *key in parameters) {
+        if(requestType == kTypePost) {
+            [request setPostValue:[parameters objectForKey:key] forKey:key];
+            DLog(@"BZWebServices: POST PARAMETER -> %@ => %@", key, [parameters objectForKey:key]);
+        } else if(requestType == kTypeGet) {
+            DLog(@"BZWebServices: GET PARAMETER -> %@ => %@", key, [parameters objectForKey:key]);
         }
+    }
     
     
     //Add files on post

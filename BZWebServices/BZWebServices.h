@@ -62,6 +62,17 @@ typedef enum { kTypePost, kTypeGet, kTypeDelete, kTypePut } kRequestType;
 /* Executes the call to the webService */
 
 -(void) webServiceCall: (NSString*) method 
+           requestType: (kRequestType) reqType
+        withParameters: (NSDictionary*) parameters
+          showProgress: (BOOL) willShowProgress
+      withProgressText: (NSString*) progressText
+             withFiles: (NSDictionary*) fileNames
+        withParseBlock: (APIParseBlock) parseBlock
+        withErrorAlert: (BOOL)showAlertError
+        withErrorTitle: (NSString*)errorTitle
+         withErrorText: (NSString*)errorText;
+
+-(void) webServiceCall: (NSString*) method 
         withParameters: (NSDictionary*) parameters
           showProgress: (BOOL) willShowProgress
       withProgressText: (NSString*) progressText
