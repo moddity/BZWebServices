@@ -208,7 +208,7 @@ static BZWebServices* _sharedInstance = nil;
     
     
     switch (requestType) {
-            
+        case kTypePut:
         case kTypeDelete:
         case kTypeGet:
             methodUrl = [NSURL URLWithString:[NSString stringWithFormat:@"%@/%@%@",APIURL, method, [BZWebServices queryString:fixedParameters withParams:parameters]]];
@@ -216,7 +216,6 @@ static BZWebServices* _sharedInstance = nil;
             NSAssert(fileNames == nil, @"Can't send files with GET");
             
             break;
-        case kTypePut:
         case kTypePost:
             methodUrl = [NSURL URLWithString:[NSString stringWithFormat:@"%@/%@",APIURL, method]];
             break;
