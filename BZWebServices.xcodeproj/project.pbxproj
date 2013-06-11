@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1F0C71D71555330B00AC46D9 /* libMBProgressHUD.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F0C71D4155532E100AC46D9 /* libMBProgressHUD.a */; };
 		1F0C723D1555335000AC46D9 /* ASIAuthenticationDialog.h in Headers */ = {isa = PBXBuildFile; fileRef = 1F0C71EB1555335000AC46D9 /* ASIAuthenticationDialog.h */; };
 		1F0C723E1555335000AC46D9 /* ASIAuthenticationDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F0C71EC1555335000AC46D9 /* ASIAuthenticationDialog.m */; };
 		1F0C723F1555335000AC46D9 /* ASICacheDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 1F0C71ED1555335000AC46D9 /* ASICacheDelegate.h */; };
@@ -66,29 +65,13 @@
 		1FA5947D13D953B400B05217 /* BZWebServices.h in Headers */ = {isa = PBXBuildFile; fileRef = 1FA5947B13D953B400B05217 /* BZWebServices.h */; };
 		1FA5947E13D953B400B05217 /* BZWebServices.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FA5947C13D953B400B05217 /* BZWebServices.m */; };
 		1FAEBF1113E6E33000D3CE77 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FAEBF1013E6E33000D3CE77 /* libz.dylib */; };
+		A8A6706F17676D5400773BB8 /* BZSVProgressHUD.h in Headers */ = {isa = PBXBuildFile; fileRef = A8A6706D17676D5400773BB8 /* BZSVProgressHUD.h */; };
+		A8A6707017676D5400773BB8 /* BZSVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = A8A6706E17676D5400773BB8 /* BZSVProgressHUD.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
 		A8AD86FE1447412B00AAA00B /* Reachability.h in Headers */ = {isa = PBXBuildFile; fileRef = A8AD86FC1447412B00AAA00B /* Reachability.h */; };
 		A8AD86FF1447412B00AAA00B /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = A8AD86FD1447412B00AAA00B /* Reachability.m */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		1F0C71D3155532E100AC46D9 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 1F0C71CC155532E100AC46D9 /* MBProgressHUD.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = D286A7491518C70F00E13FB8;
-			remoteInfo = MBProgressHUD;
-		};
-		1F0C71D5155532E800AC46D9 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 1F0C71CC155532E100AC46D9 /* MBProgressHUD.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = D286A7481518C70F00E13FB8;
-			remoteInfo = MBProgressHUD;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXFileReference section */
-		1F0C71CC155532E100AC46D9 /* MBProgressHUD.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = MBProgressHUD.xcodeproj; path = MBProgressHUD/MBProgressHUD.xcodeproj; sourceTree = "<group>"; };
 		1F0C71EB1555335000AC46D9 /* ASIAuthenticationDialog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASIAuthenticationDialog.h; sourceTree = "<group>"; };
 		1F0C71EC1555335000AC46D9 /* ASIAuthenticationDialog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASIAuthenticationDialog.m; sourceTree = "<group>"; };
 		1F0C71ED1555335000AC46D9 /* ASICacheDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASICacheDelegate.h; sourceTree = "<group>"; };
@@ -150,6 +133,9 @@
 		1FA5947B13D953B400B05217 /* BZWebServices.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BZWebServices.h; path = BZWebServices/BZWebServices.h; sourceTree = SOURCE_ROOT; };
 		1FA5947C13D953B400B05217 /* BZWebServices.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BZWebServices.m; path = BZWebServices/BZWebServices.m; sourceTree = SOURCE_ROOT; };
 		1FAEBF1013E6E33000D3CE77 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		A8A6706C17676D5400773BB8 /* SVProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SVProgressHUD.bundle; sourceTree = "<group>"; };
+		A8A6706D17676D5400773BB8 /* BZSVProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BZSVProgressHUD.h; sourceTree = "<group>"; };
+		A8A6706E17676D5400773BB8 /* BZSVProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BZSVProgressHUD.m; sourceTree = "<group>"; };
 		A8AD86FC1447412B00AAA00B /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
 		A8AD86FD1447412B00AAA00B /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -159,7 +145,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1F0C71D71555330B00AC46D9 /* libMBProgressHUD.a in Frameworks */,
 				1FAEBF1113E6E33000D3CE77 /* libz.dylib in Frameworks */,
 				1F3C29DB13D949E00060F5F6 /* libxml2.dylib in Frameworks */,
 				1F3C29D513D949CD0060F5F6 /* CFNetwork.framework in Frameworks */,
@@ -173,14 +158,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		1F0C71CD155532E100AC46D9 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				1F0C71D4155532E100AC46D9 /* libMBProgressHUD.a */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 		1F0C71EA1555335000AC46D9 /* ASIHttpRequest */ = {
 			isa = PBXGroup;
 			children = (
@@ -292,8 +269,8 @@
 		1F3C294613D825D80060F5F6 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A8A6706B17676D5400773BB8 /* SVProgressHUD */,
 				1F0C71EA1555335000AC46D9 /* ASIHttpRequest */,
-				1F0C71CC155532E100AC46D9 /* MBProgressHUD.xcodeproj */,
 				1FAEBF1013E6E33000D3CE77 /* libz.dylib */,
 				1F3C29D913D949E00060F5F6 /* libxml2.dylib */,
 				1F3C29D113D949CD0060F5F6 /* CFNetwork.framework */,
@@ -333,6 +310,16 @@
 			path = ../../../AxelPeople/AxelPeople;
 			sourceTree = "<group>";
 		};
+		A8A6706B17676D5400773BB8 /* SVProgressHUD */ = {
+			isa = PBXGroup;
+			children = (
+				A8A6706C17676D5400773BB8 /* SVProgressHUD.bundle */,
+				A8A6706D17676D5400773BB8 /* BZSVProgressHUD.h */,
+				A8A6706E17676D5400773BB8 /* BZSVProgressHUD.m */,
+			);
+			path = SVProgressHUD;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -369,6 +356,7 @@
 				1F0C72681555335000AC46D9 /* ASIS3ObjectRequest.h in Headers */,
 				1F0C726A1555335000AC46D9 /* ASIS3Request.h in Headers */,
 				1F0C726C1555335000AC46D9 /* ASIS3ServiceRequest.h in Headers */,
+				A8A6706F17676D5400773BB8 /* BZSVProgressHUD.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -387,7 +375,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				1F0C71D6155532E800AC46D9 /* PBXTargetDependency */,
 			);
 			name = BZWebServices;
 			productName = BZWebServices;
@@ -413,28 +400,12 @@
 			mainGroup = 1F3C293913D825D70060F5F6;
 			productRefGroup = 1F3C294513D825D80060F5F6 /* Products */;
 			projectDirPath = "";
-			projectReferences = (
-				{
-					ProductGroup = 1F0C71CD155532E100AC46D9 /* Products */;
-					ProjectRef = 1F0C71CC155532E100AC46D9 /* MBProgressHUD.xcodeproj */;
-				},
-			);
 			projectRoot = "";
 			targets = (
 				1F3C294313D825D80060F5F6 /* BZWebServices */,
 			);
 		};
 /* End PBXProject section */
-
-/* Begin PBXReferenceProxy section */
-		1F0C71D4155532E100AC46D9 /* libMBProgressHUD.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libMBProgressHUD.a;
-			remoteRef = 1F0C71D3155532E100AC46D9 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-/* End PBXReferenceProxy section */
 
 /* Begin PBXShellScriptBuildPhase section */
 		99F3788E142C9A14002D5574 /* ShellScript */ = {
@@ -481,18 +452,11 @@
 				1F0C72691555335000AC46D9 /* ASIS3ObjectRequest.m in Sources */,
 				1F0C726B1555335000AC46D9 /* ASIS3Request.m in Sources */,
 				1F0C726D1555335000AC46D9 /* ASIS3ServiceRequest.m in Sources */,
+				A8A6707017676D5400773BB8 /* BZSVProgressHUD.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		1F0C71D6155532E800AC46D9 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = MBProgressHUD;
-			targetProxy = 1F0C71D5155532E800AC46D9 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		1F3C294C13D825D80060F5F6 /* Debug */ = {
@@ -518,10 +482,7 @@
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				HEADER_SEARCH_PATHS = (
-					"ASIHttpRequest/**",
-					"MBProgressHUD/**",
-				);
+				HEADER_SEARCH_PATHS = "ASIHttpRequest/**";
 				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				SDKROOT = iphoneos;
 			};
@@ -543,10 +504,7 @@
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				HEADER_SEARCH_PATHS = (
-					"ASIHttpRequest/**",
-					"MBProgressHUD/**",
-				);
+				HEADER_SEARCH_PATHS = "ASIHttpRequest/**";
 				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;

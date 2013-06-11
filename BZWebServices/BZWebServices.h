@@ -12,7 +12,6 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
-@class MBProgressHUD;
 @class ASINetworkQueue;
 
 #ifndef APIParseBlock
@@ -40,9 +39,6 @@ typedef enum { kTypePost, kTypeGet, kTypeDelete, kTypePut } kRequestType;
     BOOL showProgress;
     kRequestType requestType;
     
-    //Helper objects
-    MBProgressHUD *progress;
-    UIView *progressView;
     
 }
 

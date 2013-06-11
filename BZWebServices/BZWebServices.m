@@ -9,7 +9,7 @@
 #import "BZWebServices.h"
 #import "ASIFormDataRequest.h"
 #import "ASINetworkQueue.h"
-#import "MBProgressHUD.h"
+#import "BZSVProgressHUD.h"
 #import "Reachability.h"
 
 @implementation BZWebServices
@@ -350,24 +350,31 @@
 
 
 -(void) displayProgress {
-    if(self.showProgress && progress == nil) {
-        NSAssert(self.progressView != nil, @"Progress enabled and no view defined to contain it");
-        progress = [[MBProgressHUD showHUDAddedTo:progressView animated:YES] retain];
-        progress.yOffset = kPROGRESS_OFFSET;
+//    if(self.showProgress && progress == nil) {
+//        NSAssert(self.progressView != nil, @"Progress enabled and no view defined to contain it");
+//        progress = [[MBProgressHUD showHUDAddedTo:progressView animated:YES] retain];
+//        progress.yOffset = kPROGRESS_OFFSET;
+//    }
+    if(self.showProgress){
+        [BZSVProgressHUD show];
     }
 }
 
 -(void) hideProgress {
-    if(progress != nil) {
-        //[progress hide:YES afterDelay:0.5];
-        [progress hide:YES];
-        progress = nil;
-    }
+//    if(progress != nil) {
+//        //[progress hide:YES afterDelay:0.5];
+//        [progress hide:YES];
+//        progress = nil;
+//    }
+    [BZSVProgressHUD popActivity];
 }
 
 -(void) requestStarted: (ASIFormDataRequest*) request {
     NSString *progressText = request.accessibilityLabel;
-    progress.labelText = progressText;
+//    progress.labelText = progressText;
+    if(self.showProgress){
+        [BZSVProgressHUD showWithStatus:progressText];
+    }
 }
 
 +(NSString*) queryString: (NSDictionary*) fixedParameters withParams:(NSDictionary*) params {
