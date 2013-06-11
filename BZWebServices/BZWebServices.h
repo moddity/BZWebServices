@@ -7,7 +7,6 @@
 //
 
 #define kTIMEOUT 200.0
-#define kPROGRESS_OFFSET 0.0 //-100.0
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
@@ -36,7 +35,6 @@ typedef enum { kTypePost, kTypeGet, kTypeDelete, kTypePut } kRequestType;
     NSString *APIURL;
     NSMutableDictionary *fixedParameters;
     //Configuration
-    BOOL showProgress;
     kRequestType requestType;
     
     
@@ -46,9 +44,7 @@ typedef enum { kTypePost, kTypeGet, kTypeDelete, kTypePut } kRequestType;
 @property (nonatomic, retain) NSString *APIURL;
 @property (nonatomic, retain) NSMutableDictionary *fixedParameters;
 //Configuration
-@property (assign) BOOL showProgress;
 @property (assign) kRequestType requestType;
-@property (assign) UIView *progressView;
 
 /* Executes the call to the webService */
 
@@ -109,8 +105,6 @@ typedef enum { kTypePost, kTypeGet, kTypeDelete, kTypePut } kRequestType;
            contentType: (NSString*) contentType
         withParseBlock: (APIParseBlock) parseBlock;
 
--(void) displayProgress;
--(void) hideProgress;
 
 +(NSString*) quoteString: (NSString*) originalString;
 +(NSString*) queryString: (NSDictionary*) fixedParameters withParams:(NSDictionary*) params;

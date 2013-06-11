@@ -14,7 +14,7 @@
 
 @implementation BZWebServices
 
-@synthesize APIURL, fixedParameters, delegate, showProgress, progressView,requestType;
+@synthesize APIURL, fixedParameters, delegate,requestType;
 
 -(id)init {
 	self = [super init];
@@ -36,11 +36,11 @@
 
 ////////////// QUEUE MANAGEMENT //////////////////
 -(void) queueDidFinishSelector {
-    [self hideProgress];
+
 }
 
 - (void)queueFinished:(ASINetworkQueue *)queue {
-    [self hideProgress];
+
 }
 
 
@@ -49,7 +49,7 @@
         withParseBlock:(APIParseBlock)parseBlock {
     
     [self webServiceCall:method withParameters:parameters 
-            showProgress:self.showProgress 
+            showProgress:NO
           withParseBlock:parseBlock];
 }
 
@@ -161,12 +161,11 @@
     
     NSAssert(APIURL != nil, @"La APIURL es nula");
     
-    //Setup the progress
-    self.showProgress = willShowProgress;
     
-    [self displayProgress];
-    
-    
+    if (willShowProgress) {
+        [BZSVProgressHUD showWithStatus:progressText];
+        
+    }
     
     NSURL *methodUrl = nil;
     
@@ -247,7 +246,6 @@
 
     DLog(@"BZWebServices: CALL URL -> %@", [request url]);
     
-    request.accessibilityLabel = progressText;
     
     [request setDelegate:self];
     
@@ -263,9 +261,13 @@
     
     [request setCompletionBlock:^{
         parseBlock([blockRequest responseString]);
+        [BZSVProgressHUD popActivity];
+
     }];
     
     [request setFailedBlock:^{
+        [BZSVProgressHUD popActivity];
+
         
         NSError *error = [blockRequest error];
         
@@ -298,10 +300,9 @@
 -(void) webServiceCall:(NSString *)method withPostBody:(NSMutableData *)postBody contentType: (NSString*) contentType withParseBlock:(APIParseBlock)parseBlock {
     NSAssert(APIURL != nil, @"APIURL is null");
     
-    //Setup the progress
-    self.showProgress = YES;
     
-    [self displayProgress];
+    [BZSVProgressHUD show];
+    
     NSURL *methodUrl = [NSURL URLWithString:[NSString stringWithFormat:@"%@/%@",APIURL, method]];
     
     ASIFormDataRequest *request = [ASIFormDataRequest requestWithURL:methodUrl];
@@ -322,9 +323,12 @@
 
     [request setCompletionBlock:^{
         parseBlock([request responseString]);
+        [BZSVProgressHUD popActivity];
     }];
     
     [request setFailedBlock:^{
+        
+         [BZSVProgressHUD popActivity];
         
         NSError *error = [request error];
         
@@ -348,34 +352,6 @@
 }
 
 
-
--(void) displayProgress {
-//    if(self.showProgress && progress == nil) {
-//        NSAssert(self.progressView != nil, @"Progress enabled and no view defined to contain it");
-//        progress = [[MBProgressHUD showHUDAddedTo:progressView animated:YES] retain];
-//        progress.yOffset = kPROGRESS_OFFSET;
-//    }
-    if(self.showProgress){
-        [BZSVProgressHUD show];
-    }
-}
-
--(void) hideProgress {
-//    if(progress != nil) {
-//        //[progress hide:YES afterDelay:0.5];
-//        [progress hide:YES];
-//        progress = nil;
-//    }
-    [BZSVProgressHUD popActivity];
-}
-
--(void) requestStarted: (ASIFormDataRequest*) request {
-    NSString *progressText = request.accessibilityLabel;
-//    progress.labelText = progressText;
-    if(self.showProgress){
-        [BZSVProgressHUD showWithStatus:progressText];
-    }
-}
 
 +(NSString*) queryString: (NSDictionary*) fixedParameters withParams:(NSDictionary*) params {
     NSMutableString *queryString = [[NSMutableString alloc] init];
