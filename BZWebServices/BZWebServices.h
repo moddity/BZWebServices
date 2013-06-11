@@ -54,11 +54,6 @@ typedef enum { kTypePost, kTypeGet, kTypeDelete, kTypePut } kRequestType;
 @property (assign) kRequestType requestType;
 @property (assign) UIView *progressView;
 
-/*
- SINGLETON INSTANCE
- */
-+(BZWebServices*)sharedInstance;
-
 /* Executes the call to the webService */
 
 -(void) webServiceCall: (NSString*) method 

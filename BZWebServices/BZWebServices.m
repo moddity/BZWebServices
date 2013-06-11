@@ -16,42 +16,6 @@
 
 @synthesize APIURL, fixedParameters, delegate, showProgress, progressView,requestType;
 
-
-////////// SINGLETON METHODS BEGIN /////////////
-
-
-
-static BZWebServices* _sharedInstance = nil;
-
-+(BZWebServices*)sharedInstance
-{
-	@synchronized([BZWebServices class])
-	{
-		if (!_sharedInstance)
-			[[self alloc] init];
-        
-		return _sharedInstance;
-	}
-    
-	return nil;
-}
-
-+(id)alloc
-{
-	@synchronized([BZWebServices class])
-	{
-		NSAssert(_sharedInstance == nil, @"Attempted to allocate a second instance of a singleton.");
-		_sharedInstance = [super alloc];
-		return _sharedInstance;
-	}
-    
-	return nil;
-}
-
-
-
-//////////// END SINGLETON METHODS //////////////
-
 -(id)init {
 	self = [super init];
 	if (self != nil) {
